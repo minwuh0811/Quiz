@@ -1,50 +1,50 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main {
+public class ConsoleGame {
     private Scanner scanner;
     private PlayerStorage players;
 
-    public Main(Scanner scanner){
+    public ConsoleGame(Scanner scanner){
         this.scanner=scanner;
         this.players = new PlayerStorage();
     }
 
     public static void main(String[] args) {
-        Main main=new Main(new Scanner(System.in));
+        ConsoleGame consoleGame =new ConsoleGame(new Scanner(System.in));
         while (true) {
             System.out.println("New User Press 1, User has a account Press 2, Exit Press 3");
-            String choice = main.getLine();
+            String choice = consoleGame.getLine();
             switch (choice) {
                 case "1":
                     System.out.println("Enter a username");
-                    String username = main.getLine();
+                    String username = consoleGame.getLine();
                     System.out.println("Enter a password");
-                    String password = main.getLine();
-                    main.players.AddPlayer(new Player(username, password));
+                    String password = consoleGame.getLine();
+                    consoleGame.players.AddPlayer(new Player(username, password));
                     break;
                 case "2":
                     System.out.println("Enter your username");
-                    username = main.getLine();
+                    username = consoleGame.getLine();
                     System.out.println("Enter a password");
-                    password = main.getLine();
-                    for (Player player : main.players.getPlayers()) {
+                    password = consoleGame.getLine();
+                    for (Player player : consoleGame.players.getPlayers()) {
                         if (player.getUsername().equals(username) && player.getPassword().equals(password)) {
                             System.out.println("Login successfully");
                             while(true) {
                                 System.out.println("Play game Press 1, Exit Press 2");
-                                String choicePlay = main.getLine();
+                                String choicePlay = consoleGame.getLine();
                                 switch (choicePlay) {
                                     case "1":
                                         ArrayList<Question> testQuestions=new ArrayList<>();
-                                        main.addTestQuestions(testQuestions, main.testQuestion(new Choice("Stockholm"), new Choice("Göteborg"), new Choice("Malmo"), new Choice("Örebro"), "What is capital of Sweden?"));
-                                        main.addTestQuestions(testQuestions, main.testQuestion(new Choice("Copenhagen"), new Choice("Göteborg"), new Choice("Malmo"), new Choice("Örebro"), "What is capital of Denmark?"));
+                                        consoleGame.addTestQuestions(testQuestions, consoleGame.testQuestion(new Choice("Stockholm"), new Choice("Göteborg"), new Choice("Malmo"), new Choice("Örebro"), "What is capital of Sweden?"));
+                                        consoleGame.addTestQuestions(testQuestions, consoleGame.testQuestion(new Choice("Copenhagen"), new Choice("Göteborg"), new Choice("Malmo"), new Choice("Örebro"), "What is capital of Denmark?"));
                                         Game game = new Game(player, testQuestions);
                                         for (Question questionGame : game.getQuestions()) {
                                             System.out.println(questionGame.getQuestion());
                                             System.out.println("Choose the correct one from the list");
                                             System.out.println(questionGame.getChoices());
-                                            String answer = main.getLine();
+                                            String answer = consoleGame.getLine();
                                             if (answer.equals(questionGame.getRightChoice().getChoice())) {
                                                 System.out.println("Correct");
                                                 game.addOneScore();
