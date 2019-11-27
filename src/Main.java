@@ -36,19 +36,7 @@ public class Main {
                                 String choicePlay = main.getLine();
                                 switch (choicePlay) {
                                     case "1":
-                                        Choice rightChoice1 = new Choice("Stockholm");
-                                        Choice choice2 = new Choice("Göteborg");
-                                        Choice choice3 = new Choice("Malmo");
-                                        Choice choice4 = new Choice("Örebro");
-                                        ArrayList<Choice> choices = new ArrayList<>();
-                                        choices.add(choice2);
-                                        choices.add(rightChoice1);
-                                        choices.add(choice3);
-                                        choices.add(choice4);
-                                        Question question = new Question("What is the capital of Sweden", choices, rightChoice1);
-                                        ArrayList<Question> questions = new ArrayList<>();
-                                        questions.add(question);
-                                        Game game = new Game(player, questions);
+                                        Game game = new Game(player, main.testQuestions());
                                         for (Question questionGame : game.getQuestions()) {
                                             System.out.println(questionGame.getQuestion());
                                             System.out.println("Choose the correct one from the list");
@@ -92,5 +80,21 @@ public class Main {
 
     public String getLine(){
         return scanner.nextLine();
+    }
+
+    public ArrayList<Question> testQuestions(){
+        Choice rightChoice1 = new Choice("Stockholm");
+        Choice choice2 = new Choice("Göteborg");
+        Choice choice3 = new Choice("Malmo");
+        Choice choice4 = new Choice("Örebro");
+        ArrayList<Choice> choices = new ArrayList<>();
+        choices.add(choice2);
+        choices.add(rightChoice1);
+        choices.add(choice3);
+        choices.add(choice4);
+        Question question = new Question("What is the capital of Sweden", choices, rightChoice1);
+        ArrayList<Question> questions = new ArrayList<>();
+        questions.add(question);
+        return questions;
     }
 }
