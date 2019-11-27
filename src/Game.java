@@ -1,3 +1,4 @@
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -5,7 +6,9 @@ public class Game {
     private Player player;
     private ArrayList<Question> questions=new ArrayList<>();
     private int finalScore;
-    private String date;
+    private Date initalDate;
+    private Date finalDate;
+    private SimpleDateFormat formatter;
 
     public Player getPlayer() {
         return player;
@@ -31,18 +34,16 @@ public class Game {
         this.finalScore = finalScore;
     }
 
-    public String getDate() {
-        return date;
+    public Date getDate() {
+        return initalDate;
     }
 
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public Game(Player player, String date, ArrayList<Question> questions) {
+    public Game(Player player, ArrayList<Question> questions) {
         this.player = player;
         this.finalScore = 0;
-        this.date = date;
+        this.initalDate=new Date();
+        this.formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        printDate(this.initalDate);
         this.questions=questions;
 
     }
@@ -57,5 +58,14 @@ public class Game {
     }
 
 
+    public void printDate(Date date){
+        System.out.println(formatter.format(date));
+
+    }
+
+    public void printFinalDate(){
+        this.finalDate=new Date();
+        System.out.println(formatter.format(finalDate));
+    }
 
 }
