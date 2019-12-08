@@ -1,12 +1,13 @@
+package object;
+
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 
 public class Game {
     private Player player;
-    private ArrayList<Question> questions=new ArrayList<>();
+    private QuestionStorage questionsStorage;
     private int finalScore;
-    private Date initalDate;
+    private Date initialDate;
     private Date finalDate;
     private SimpleDateFormat formatter;
 
@@ -18,12 +19,12 @@ public class Game {
         this.player = player;
     }
 
-    public ArrayList<Question> getQuestions() {
-        return questions;
+    public QuestionStorage getQuestionStorage() {
+        return questionsStorage;
     }
 
-    public void setQuestions(ArrayList<Question> questions) {
-        this.questions = questions;
+    public void setQuestionStorage(QuestionStorage questionsStorage) {
+        this.questionsStorage =questionsStorage;
     }
 
     public int getFinalScore() {
@@ -35,23 +36,29 @@ public class Game {
     }
 
     public Date getDate() {
-        return initalDate;
+        return initialDate;
     }
 
-    public Game(Player player, ArrayList<Question> questions) {
+    public Game(Player player, QuestionStorage questionsStorage) {
         this.player = player;
         this.finalScore = 0;
-        this.initalDate=new Date();
+        this.initialDate=new Date();
         this.formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-        printDate(this.initalDate);
-        this.questions=questions;
+        printDate(this.initialDate);
+        this.questionsStorage=questionsStorage;
 
     }
 
-    public ArrayList<Question> Questions(Question question){
-        questions.add(question);
-        return questions;
+    public Game(QuestionStorage questionsStorage) {
+        this.player= new Player("Guess");
+        this.finalScore = 0;
+        this.initialDate=new Date();
+        this.formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        printDate(this.initialDate);
+        this.questionsStorage=questionsStorage;
+
     }
+
 
     public void addOneScore(){
         finalScore+=1;
@@ -68,4 +75,7 @@ public class Game {
         System.out.println(formatter.format(finalDate));
     }
 
+    public SimpleDateFormat getFormatter() {
+        return formatter;
+    }
 }

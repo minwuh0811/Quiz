@@ -1,7 +1,18 @@
+package object;
+
 import java.util.ArrayList;
 
 public class QuestionStorage {
     private ArrayList<Question> questions=new ArrayList<>();
+
+    public QuestionStorage(){
+    }
+
+    public QuestionStorage(Question question){
+        addQuestion(question);
+    }
+
+
 
     public ArrayList<Question> getQuestions() {
         return questions;

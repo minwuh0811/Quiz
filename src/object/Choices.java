@@ -35,7 +35,7 @@ public class Choices {
     public String getChoice2() {
         return choice2;
     }
-    
+
 
     public void setChoice2(String choice2) {
         this.choice2 = choice2;
@@ -73,11 +73,9 @@ public class Choices {
         return rightChoice;
     }
 
-    public void setRightChoice(String rightChoice) {
-        this.rightChoice = rightChoice;
-    }
 
-    public void addRightChoice(String rightChoice) {
+
+    public void setRightChoice(String rightChoice) {
         for (String choice: choices){
             if (choice.equals(rightChoice)){
                 this.rightChoice=rightChoice;
