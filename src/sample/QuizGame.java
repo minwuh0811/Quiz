@@ -7,11 +7,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import object.*;
 
+import java.io.File;
 import java.net.URL;
+import java.util.Collection;
 
 
 public class QuizGame extends Application {
@@ -48,11 +53,22 @@ public class QuizGame extends Application {
             Parent root = loader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
-            stage.showAndWait();
+        root.getStylesheets().add(getClass().getResource("QuizStyle.css").toExternalForm());
+        root.getStylesheets().add("https://fonts.googleapis.com/css?family=Caveat");
+        root.getStylesheets().add("https://fonts.googleapis.com/css?family=Ubuntu");
+        root.getStylesheets().add("https://fonts.googleapis.com/css?family=Press+Start+2P");
+        root.getStylesheets().add("https://fonts.googleapis.com/css?family=Sigmar+One");
+
+
+        String path = "/Users/83annmat/IdeaProjects/Quiz2/src/sample/bensound-scifi.mp3";
+        Media hit = new Media(new File(path).toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(hit);
+        mediaPlayer.play();
+
+
+        stage.showAndWait();
+
     }
-
-
-
 
 
 }

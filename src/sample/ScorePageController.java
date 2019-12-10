@@ -60,7 +60,7 @@ public class ScorePageController {
         submit.setOnAction(action -> {
             System.out.println(usernameField.getText());
             game.setPlayer(new Player(usernameField.getText()));
-            welcome.setText("Welcome "+ usernameField.getText() + " !");
+            welcome.setText("Good job, "+ usernameField.getText() + " !");
             enter.setText("");
             username.setText("");
             usernameField.setVisible(false);

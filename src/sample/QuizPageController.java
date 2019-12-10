@@ -5,6 +5,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,6 +14,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import object.Game;
 import object.Question;
 
@@ -28,6 +30,8 @@ public class QuizPageController {
     public QuizPageController(Game game) {
         this.game = game;
         this.n = 0;
+
+
 
     }
 
@@ -119,7 +123,20 @@ public class QuizPageController {
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.showAndWait();
+        root.getStylesheets().add(getClass().getResource("QuizStyle.css").toExternalForm());
+        root.getStylesheets().add("https://fonts.googleapis.com/css?family=Caveat");
+        root.getStylesheets().add("https://fonts.googleapis.com/css?family=Ubuntu");
+        root.getStylesheets().add("https://fonts.googleapis.com/css?family=Press+Start+2P");
+        root.getStylesheets().add("https://fonts.googleapis.com/css?family=Sigmar+One");
+
+
+
+
+
+
+
     }
+
 
 }
 
