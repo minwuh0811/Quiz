@@ -4,8 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -14,11 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import object.Game;
-import object.Question;
-
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
 
 
 public class QuizPageController {
@@ -53,7 +47,7 @@ public class QuizPageController {
 
     @FXML
     public void initialize() {
-        ArrayList<String> choices = game.getQuestionStorage().getQuestions().get(n).getChoices().getChoices();
+        ArrayList<String> choices = game.getQuestionStorage().getQuestions().get(n).getChoices().getShuffleChoices();
         checkBoxes.add(checkbox1);
         checkBoxes.add(checkbox2);
         checkBoxes.add(checkbox3);
@@ -98,7 +92,7 @@ public class QuizPageController {
                     if (n < game.getQuestionStorage().getQuestions().size()) {
                         initialize();
                     } else {
-                        System.out.println("final score is " + game.getFinalScore());
+                        textScore.setText("" + game.getFinalScore());
                         try {
                             ScorePage(game);
                         } catch (Exception e){
@@ -112,6 +106,7 @@ public class QuizPageController {
 
 
     public void ScorePage(Game game) throws Exception {
+
         ScorePageController scorePageController = new ScorePageController(game);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("ScorePage.fxml"));
         loader.setController(scorePageController);
