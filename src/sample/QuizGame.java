@@ -9,7 +9,6 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import object.*;
@@ -33,7 +32,7 @@ public class QuizGame extends Application {
 //       Scene scene = new Scene(new StackPane(l), 640, 480);
 //       primaryStage.setScene(scene);
 //       primaryStage.show();
-         Choices choices=new Choices("Min","Anara","Karolin","Ann");
+         Choices choices=new Choices("Min","Anara","Caroline","Ann");
          choices.setRightChoice("Min");
          Question question=new Question("Who has the time today?", choices);
          QuestionStorage questions= new QuestionStorage(question);
@@ -64,7 +63,6 @@ public class QuizGame extends Application {
         Media hit = new Media(new File(path).toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(hit);
         mediaPlayer.play();
-
 
         stage.showAndWait();
 
