@@ -1,19 +1,17 @@
 package sample;
 
+import database.DataBaseConnection;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 import object.Game;
 import object.Player;
 
-import java.io.BufferedReader;
-import java.util.Scanner;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 
 public class ScorePageController {
     private Game game ;
@@ -58,17 +56,29 @@ public class ScorePageController {
     @FXML
     public void handleButtonAction(){
         submit.setOnAction(action -> {
-            System.out.println(usernameField.getText());
             game.setPlayer(new Player(usernameField.getText()));
             welcome.setText("Good job, "+ usernameField.getText() + " !");
             enter.setText("");
             username.setText("");
             usernameField.setVisible(false);
             submit.setVisible(false);
+            insertSQLGameScore(game);
         });
 
     }
 
-
+    private void insertSQLGameScore(Game game) {
+        DataBaseConnection dataBaseConnection=new DataBaseConnection();
+        try(ResultSet resultSet=dataBaseConnection.getStatement().executeQuery("SELECT * FROM game");) {
+            System.out.println("Connected.");
+            resultSet.last();
+            int n=resultSet.getRow()+1;
+            String string = String.format("INSERT INTO `game` (`gameid`, `score`, `username`) VALUES(%d,%d,\'%s\');", n, game.getFinalScore(), game.getPlayer().getUsername());
+            System.out.println(string);
+            dataBaseConnection.getStatement().execute(string);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
 
 }
