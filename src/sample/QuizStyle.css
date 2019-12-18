@@ -1,0 +1,86 @@
+#scoreText {
+-fx-background-image: url("spacebg.jpeg");
+-fx-background-repeat: stretch;
+-fx-background-position: center center;
+-fx-background-size: 600px, 900px;
+
+}
+
+
+#submit {
+-fx-font-family: 'Ubuntu', sans-serif;
+-fx-font-size: 20px;
+
+}
+
+#score {
+-fx-font-family: 'Sigmar One', cursive;
+-fx-font-size: 20px;
+-fx-color: coral;
+}
+
+#quizzy {
+-fx-font-family: 'Press Start 2P', cursive;
+-fx-font-size: 40px;
+}
+
+#checkbox1{
+-fx-text-fill: white;
+-fx-font-family: 'Ubuntu', sans-serif;
+-fx-font-size: 18px;
+}
+
+#checkbox2{
+-fx-text-fill: white;
+-fx-font-family: 'Ubuntu', sans-serif;
+-fx-font-size: 18px;
+}
+
+#checkbox3{
+-fx-text-fill: white;
+-fx-font-family: 'Ubuntu', sans-serif;
+-fx-font-size: 18px;
+
+}
+
+#checkbox4 {
+-fx-text-fill: white;
+-fx-font-family: 'Ubuntu', sans-serif;
+-fx-font-size: 18px;
+
+}
+
+#username {
+-fx-font-family: 'Ubuntu', sans-serif;
+}
+
+#scoreScreen {
+-fx-background-image: url("spacebg.jpeg");
+-fx-background-repeat: stretch;
+-fx-background-position: center center;
+-fx-background-size: 600px, 900px;
+
+}
+
+#scoreField {
+-fx-font-family: 'Sigmar One', cursive;}
+
+#enter {
+-fx-font-family: 'Ubuntu', sans-serif;
+
+}
+
+#date {
+-fx-font-family: 'Ubuntu', sans-serif;
+
+}
+
+#finalScore {
+-fx-font-family: 'Sigmar One', cursive;
+}
+
+#welcome {
+-fx-font-family: 'Ubuntu', sans-serif;
+}
+
+
