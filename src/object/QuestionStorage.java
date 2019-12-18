@@ -12,8 +12,6 @@ public class QuestionStorage {
         addQuestion(question);
     }
 
-
-
     public ArrayList<Question> getQuestions() {
         return questions;
     }

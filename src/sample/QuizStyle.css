@@ -83,4 +83,11 @@
 -fx-font-family: 'Ubuntu', sans-serif;
 }
 
+@media all and (display-mode: fullscreen) {
+    #scoreScreen {
+        -fx-background-color: red;
+
+    }
+}
+
 
