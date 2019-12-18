@@ -57,7 +57,7 @@ public class QuizPageController {
 
     @FXML
     public void initialize() {
-        ArrayList<String> choices = game.getQuestionStorage().getQuestions().get(n).getChoices().getChoices();
+        ArrayList<String> choices = game.getQuestionStorage().getQuestions().get(n).getChoices().getShuffleChoices();
         checkBoxes.add(checkbox1);
         checkBoxes.add(checkbox2);
         checkBoxes.add(checkbox3);
