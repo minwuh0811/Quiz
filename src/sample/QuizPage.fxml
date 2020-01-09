@@ -9,11 +9,11 @@
 
 <AnchorPane fx:id="scoreText" prefHeight="400.0" prefWidth="600.0" stylesheets="@QuizStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <CheckBox fx:id="checkbox2" layoutX="336.0" layoutY="224.0" mnemonicParsing="false" />
-      <CheckBox fx:id="checkbox3" layoutX="34.0" layoutY="263.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="182.0" />
-      <CheckBox fx:id="checkbox4" layoutX="336.0" layoutY="263.0" mnemonicParsing="false" />
-      <CheckBox fx:id="checkbox1" layoutX="34.0" layoutY="224.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="182.0" textFill="WHITE" />
-      <Text fx:id="textQuestion" fill="WHITE" layoutX="82.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Which one is the capital of Sweden?" wrappingWidth="456.80338287353516">
+      <CheckBox fx:id="checkbox2" layoutX="336.0" layoutY="169.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="260.0" wrapText="true" />
+      <CheckBox fx:id="checkbox3" layoutX="34.0" layoutY="263.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="300.0" wrapText="true" />
+      <CheckBox fx:id="checkbox4" layoutX="336.0" layoutY="263.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="260.0" wrapText="true" />
+      <CheckBox fx:id="checkbox1" layoutX="34.0" layoutY="169.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="300.0" textFill="WHITE" wrapText="true" />
+      <Text fx:id="textQuestion" fill="WHITE" layoutX="40.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Which one is the capital of Sweden?" wrappingWidth="456.80338287353516">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Text>
