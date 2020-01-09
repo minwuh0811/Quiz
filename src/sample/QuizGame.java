@@ -5,12 +5,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import java.util.Collections;
 import object.*;
 import database.DataBaseConnection;
 
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Random;
 
 
 public class QuizGame extends Application {
@@ -29,7 +33,8 @@ public class QuizGame extends Application {
             System.out.println("Number of lines:" + resultSet.getRow());
             resultSet.first();
             QuestionStorage questionStorage = LoadDataBase(resultSet);
-            Game game = new Game(questionStorage);
+            QuestionStorage questionRandom=QuestionRandom(questionStorage,15);
+            Game game = new Game(questionRandom);
             QuizPage(game);
 
         } catch (SQLException e) {
@@ -59,6 +64,20 @@ public class QuizGame extends Application {
         } while(resultSet.next());
 
         return questions;
+    }
+
+    public QuestionStorage QuestionRandom(QuestionStorage totalQuestion, Integer n){
+        int questionN=totalQuestion.getQuestions().size();
+        QuestionStorage questionRandom=new QuestionStorage();
+        ArrayList<Integer> numberList= new ArrayList<>();
+        for (int i=0; i<questionN; i++){
+            numberList.add(i);
+        }
+        Collections.shuffle(numberList);
+        for (int i=0; i<n; i++){
+            questionRandom.addQuestion(totalQuestion.getQuestions().get(numberList.get(i)));
+        }
+        return questionRandom;
     }
 
 }
