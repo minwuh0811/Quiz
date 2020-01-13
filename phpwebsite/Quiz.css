@@ -36,7 +36,7 @@ body{       /* Bakgrund */
 .Butt1:hover{  /* Vad som händer när man hovrar över knapparna */
     background-color: rgb(23, 56, 78);
     color: rgb(253, 253, 253);
-    width: 200px;
+    width: 250px;
     font-size: 16px;
     height: 25%;
 }
@@ -60,9 +60,9 @@ body{       /* Bakgrund */
 .Butt2:hover{  /* Vad som händer när man hovrar över knapparna */
     background-color: rgb(23, 56, 78);
     color: rgb(253, 253, 253);
-    width: 17%;
+    width: 18%;
     font-size: 16px;
-    height: 30%;
+    height: 25%;
 
 }
 .more{      /*Texten som kommer upp när man håller över*/
@@ -70,25 +70,11 @@ body{       /* Bakgrund */
 }
 button:hover .more{
     display: inline-block;
+    width: 200px;
+    height: 200px;
 }
 
-#highscore{       /* Highscore style */
-   background-color: rgba(236, 229, 229, 0.459);
-   color: rgb(35, 37, 128);
-   font-size: 25px;
-   text-align: left;
-   position: absolute;
-   left: 30%;
-   top: 42%;
-   padding-top: 10px;
-   padding-right: 200px;
-   padding-bottom: 80px;
-   padding-left: 20px;
-   border: 2px solid rgb(0, 33, 53);
-   width: 300px;
-   font-family: 'Modak', cursive;
-   
-}
+
 
 footer{      /* Footer design*/
     border-style: solid;
@@ -120,6 +106,24 @@ footer{      /* Footer design*/
     position: absolute;
     top: 70%;
     left: 42%;
+}
+
+#highscore {       /* Highscore style */
+   background-color: rgba(236, 229, 229, 0.459);
+   color: rgb(35, 37, 128);
+   font-size: 25px;
+   text-align: left;
+   position: absolute;
+   left: 30%;
+   top: 42%;
+   padding-top: 10px;
+   padding-right: 200px;
+   padding-bottom: 80px;
+   padding-left: 20px;
+   border: 2px solid rgb(0, 33, 53);
+   width: 300px;
+   font-family: 'Modak', cursive;
+   
 }
 
 /*background-color: rgba(236, 229, 229, 0.459);

@@ -24,13 +24,13 @@ include 'DatabaseConnection.php';
 </head>
 <body> 
     <Header class="Header">
-          <h1 class="Rubrik">Quizzie</h1>
+          <h1 class="Rubrik">Quizzy</h1>
 
     </Header>
           
         <! knappar under rubrik>
-    <button class="Butt1">Rules<span class="more">You have (5) lifes and 10 seconds on each question! there are two levels.</span></button>
-    <button class="Butt2">About<span class="more"> We are five students who were told to create a game so we created Quizzie, hope you like it! </span></button>      
+    <button class="Butt1">Rules<span class="more">There are 15 questions and only one correct answer. For each correct answer, user will get one point.</span></button>
+    <button class="Butt2">About<span class="more"> We are five students who were told to create a game so we created Quizzy, hope you like it! </span></button>      
                             
         <! listan med highscore>
     <p id="highscore">Highscore:</p>
