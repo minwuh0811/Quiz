@@ -3,7 +3,7 @@
  include 'DatabaseConnection.php';
         $startNewPoint= $_POST['startNewPoint'];
 
-        $sql = "SELECT username, score FROM game ORDER BY score DESC LIMIT $startNewPoint, 2";
+        $sql = "SELECT username, score FROM game ORDER BY score DESC LIMIT $startNewPoint, 10";
         $result = mysqli_query($mysqli, $sql);
         if (mysqli_num_rows($result) >0) {
            while($row=mysqli_fetch_assoc($result)){

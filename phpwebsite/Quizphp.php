@@ -15,7 +15,7 @@ include 'DatabaseConnection.php';
         $(document).ready(function() {
             var startPoint=0;
             $("button").click(function(){
-                startPoint= startPoint+2;
+                startPoint= startPoint+10;
                 $("#scores").load("load-scores.php", {startNewPoint: startPoint});
             });
         });
@@ -37,7 +37,7 @@ include 'DatabaseConnection.php';
 <div id="scores">
     <?php
         echo"<ul>";
-        $sql = "SELECT username, score FROM game ORDER BY score DESC LIMIT 0, 2";
+        $sql = "SELECT username, score FROM game ORDER BY score DESC LIMIT 0, 10";
         $result = mysqli_query($mysqli, $sql);
         if (mysqli_num_rows($result) >0) {
            while($row=mysqli_fetch_assoc($result)){

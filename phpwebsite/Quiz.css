@@ -79,6 +79,7 @@ button:hover .more{
 footer{      /* Footer design*/
     border-style: solid;
     background-color: rgba(191, 202, 209, 0.288);
+    top:130%;
     bottom: 0px;
     position: absolute;
     color: rgb(0, 0, 0);
@@ -104,7 +105,7 @@ footer{      /* Footer design*/
     font-size: 25px;
     font-family: 'Modak', cursive;
     position: absolute;
-    top: 70%;
+    top: 115%;
     left: 42%;
 }
 
@@ -118,7 +119,7 @@ footer{      /* Footer design*/
    top: 42%;
    padding-top: 10px;
    padding-right: 200px;
-   padding-bottom: 80px;
+   padding-bottom: 360px;
    padding-left: 20px;
    border: 2px solid rgb(0, 33, 53);
    width: 300px;
